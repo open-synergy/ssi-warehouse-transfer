@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Copyright 2023 OpenSynergy Indonesia-->
+<!--Copyright 2023 PT. Simetri Sinergi Indonesia-->
+<!--License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).-->
+<odoo>
+<record id="warehouse_transfer_type_view_tree" model="ir.ui.view">
+    <field name="name">warehouse_transfer_type - Tree</field>
+    <field name="model">warehouse_transfer_type</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="ssi_master_data_mixin.mixin_master_data_view_tree" />
+    <field name="arch" type="xml">
+        <data />
+    </field>
+</record>
+
+<record id="warehouse_transfer_type_view_search" model="ir.ui.view">
+    <field name="name">warehouse_transfer_type - Search</field>
+    <field name="model">warehouse_transfer_type</field>
+    <field name="mode">primary</field>
+    <field
+            name="inherit_id"
+            ref="ssi_master_data_mixin.mixin_master_data_view_search"
+        />
+    <field name="arch" type="xml">
+        <data />
+    </field>
+</record>
+
+<record id="warehouse_transfer_type_view_form" model="ir.ui.view">
+    <field name="name">warehouse_transfer_type - Form</field>
+    <field name="model">warehouse_transfer_type</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="ssi_master_data_mixin.mixin_master_data_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[last()]" position="before">
+                <page name="inventory" string="Inventory">
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="warehouse_transfer_type_action" model="ir.actions.act_window">
+    <field name="name">Warehouse Transfer Types</field>
+    <field name="res_model">warehouse_transfer_type</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+        id="warehouse_transfer_type_menu"
+        name="Warehouse Transfer Types"
+        parent="menu_warehouse_transfer_config"
+        action="warehouse_transfer_type_action"
+        groups="warehouse_transfer_type_group"
+        sequence="10"
+    />
+</odoo>

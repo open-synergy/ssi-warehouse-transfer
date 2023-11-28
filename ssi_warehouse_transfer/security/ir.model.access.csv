@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_warehouse_transfer_type_configurator,warehouse_transfer_type - configurator,model_warehouse_transfer_type,warehouse_transfer_type_group,1,1,1,1
+access_warehouse_transfer_type_all,warehouse_transfer_type - all,model_warehouse_transfer_type,,1,0,0,0
+access_warehouse_transfer_all,warehouse_transfer - all,model_warehouse_transfer,,1,0,0,0
+access_warehouse_transfer_viewer,warehouse_transfer - viewer,model_warehouse_transfer,warehouse_transfer_viewer_group,1,0,0,0
+access_warehouse_transfer_user,warehouse_transfer - user,model_warehouse_transfer,warehouse_transfer_user_group,1,1,1,1
+access_warehouse_transfer_line_all,warehouse_transfer_line - all,model_warehouse_transfer_line,,1,0,0,0
+access_warehouse_transfer_line_viewer,warehouse_transfer_line - viewer,model_warehouse_transfer_line,warehouse_transfer_viewer_group,1,0,0,0
+access_warehouse_transfer_line_user,warehouse_transfer_line - user,model_warehouse_transfer_line,warehouse_transfer_user_group,1,1,1,1

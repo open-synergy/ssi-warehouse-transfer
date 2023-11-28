@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<odoo>
+<data>
+
+<menuitem
+            id="menu_warehouse_transfer_config"
+            name="Warehouse Transfer"
+            parent="stock.menu_stock_config_settings"
+            sequence="20"
+        />
+
+</data>
+</odoo>
