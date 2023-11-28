@@ -22,6 +22,7 @@
         "ssi_stock_location_m2o_configurator_mixin",
         "ssi_stock_route_m2o_configurator_mixin",
         "ssi_stock_warehouse_m2o_configurator_mixin",
+        "ssi_m2o_configurator_mixin",
     ],
     "data": [
         "security/ir_module_category_data.xml",
