@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<data noupdate="1">
+<record id="warehouse_transfer_sequence" model="ir.sequence">
+    <field name="name">Warehouse Transfer</field>
+    <field name="code">warehouse_transfer</field>
+    <field name="prefix">WHT/%(range_year)s/</field>
+    <field eval="1" name="number_next" />
+    <field eval="1" name="number_increment" />
+    <field name="padding" eval="6" />
+    <field name="use_date_range" eval="1" />
+    <field eval="False" name="company_id" />
+</record>
+</data>
+</odoo>

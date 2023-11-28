@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Copyright 2023 OpenSynergy Indonesia-->
+<!--Copyright 2023 PT. Simetri Sinergi Indonesia-->
+<!--License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).-->
+<odoo>
+<record id="warehouse_transfer_view_tree" model="ir.ui.view">
+    <field name="name">warehouse_transfer - Tree</field>
+    <field name="model">warehouse_transfer</field>
+    <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_tree" />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='company_id']" position="after">
+            <field name="date" />
+            <field name="type_id" />
+            <field name="outbound_warehouse_id" />
+            <field name="outbound_location_id" />
+            <field name="inbound_warehouse_id" />
+            <field name="inbound_location_id" />
+            <field name="route_id" />
+        </xpath>
+    </field>
+</record>
+
+<record id="warehouse_transfer_view_search" model="ir.ui.view">
+    <field name="name">warehouse_transfer - Search</field>
+    <field name="model">warehouse_transfer</field>
+    <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_search"
+        />
+    <field name="arch" type="xml">
+        <data />
+    </field>
+</record>
+
+<record id="warehouse_transfer_view_form" model="ir.ui.view">
+    <field name="name">warehouse_transfer - Form</field>
+    <field name="model">warehouse_transfer</field>
+    <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_form" />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='user_id']" position="after">
+            <field name="type_id" />
+            <field name="date" />
+        </xpath>
+        <xpath expr="//group[@name='header_right']" position="inside">
+            <separator string="Outbound" />
+            <field
+                    name="allowed_outbound_warehouse_ids"
+                    widget="many2many_tags"
+                    invisible="1"
+                />
+            <field
+                    name="outbound_warehouse_id"
+                    string="Warehouse"
+                    domain="[('id','in',allowed_outbound_warehouse_ids)]"
+                />
+            <field
+                    name="allowed_outbound_location_ids"
+                    widget="many2many_tags"
+                    invisible="1"
+                />
+            <field
+                    name="outbound_location_id"
+                    string="Location"
+                    domain="[('id','in',allowed_outbound_location_ids),('warehouse_id','=',outbound_warehouse_id)]"
+                />
+            <separator string="Inbound" />
+            <field
+                    name="allowed_inbound_warehouse_ids"
+                    widget="many2many_tags"
+                    invisible="1"
+                />
+            <field
+                    name="inbound_warehouse_id"
+                    string="Warehouse"
+                    domain="[('id','in',allowed_inbound_warehouse_ids)]"
+                />
+            <field
+                    name="allowed_inbound_location_ids"
+                    widget="many2many_tags"
+                    invisible="1"
+                />
+            <field
+                    name="inbound_location_id"
+                    string="Location"
+                    domain="[('id','in',allowed_inbound_location_ids),('warehouse_id','=',inbound_warehouse_id)]"
+                />
+            <field name="allowed_route_ids" widget="many2many_tags" invisible="1" />
+            <field
+                    name="route_id"
+                    domain="[('id','in',allowed_route_ids),('warehouse_ids','in',inbound_warehouse_id)]"
+                />
+
+        </xpath>
+        <xpath expr="//page[1]" position="before">
+            <page name="detail" string="Details">
+                <field name="line_ids">
+                    <tree>
+                        <field name="sequence" widget="handle" />
+                        <field name="product_id" />
+                        <field name="uom_quantity" />
+                        <field name="uom_id" />
+                        <field name="qty_to_receive" string="To Receive" />
+                        <field name="qty_to_deliver" string="To Deliver" />
+                    </tree>
+                    <form>
+                        <group name="form_detail" colspan="4" col="2">
+                            <group name="form_detail1" colspan="1" col="2">
+                                <field name="sequence" />
+                                <field name="product_id" />
+                                <field name="name" />
+                            </group>
+                            <group name="form_detail2" colspan="1" col="2">
+                                <field
+                                        name="allowed_uom_ids"
+                                        widget="many2many_tags"
+                                        invisible="1"
+                                    />
+                                <label for="uom_quantity" string="Quantity" />
+                                <div>
+                                    <field name="uom_quantity" class="oe_inline" />
+                                    <field
+                                            name="uom_id"
+                                            domain="[('id','in',allowed_uom_ids)]"
+                                            class="oe_inline"
+                                        />
+                                </div>
+                                <field name="quantity" invisible="1" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="move" string="Stock Move">
+                                <field name="stock_move_ids" readonly="1" />
+                            </page>
+                            <page name="quantity" string="Quantities">
+                                <group name="quantity" colspan="4" col="2">
+                                    <group name="quantity1" colspan="1" col="2">
+                                        <field name="qty_to_receive" />
+                                        <field name="qty_incoming" />
+                                        <field name="qty_received" />
+                                    </group>
+                                    <group name="quantity2" colspan="1" col="2">
+                                        <field name="qty_to_deliver" />
+                                        <field name="qty_outgoing" />
+                                        <field name="qty_delivered" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </form>
+                </field>
+            </page>
+            <page name="procurement" string="Procurement">
+                <button
+                        name="action_create_picking"
+                        type="object"
+                        string="Create Picking"
+                        class="oe_highlight"
+                        icon="fa-sign-in"
+                        style="margin-right:4px"
+                    />
+                <group name="procurement_1" colspan="4" col="2">
+                    <field name="procurement_group_id" />
+                </group>
+                <group name="procurement_2" colspan="4" col="2" invisible="0">
+                    <field name="qty_to_receipt" />
+                    <field name="qty_to_deliver" />
+                    <field name="qty_received" />
+                    <field name="qty_delivered" />
+                    <field name="uom_quantity" />
+                    <field name="resolve_ok" />
+                </group>
+            </page>
+        </xpath>
+    </field>
+</record>
+
+<record id="warehouse_transfer_action" model="ir.actions.act_window">
+    <field name="name">Warehouse Transfer</field>
+    <field name="res_model">warehouse_transfer</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+        id="warehouse_transfer_menu"
+        name="Warehouse Transfers"
+        parent="stock.menu_stock_root"
+        action="warehouse_transfer_action"
+        groups="warehouse_transfer_viewer_group"
+        sequence="2"
+    />
+</odoo>

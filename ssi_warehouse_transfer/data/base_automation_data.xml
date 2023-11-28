@@ -1,0 +1,13 @@
+<odoo>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<data>
+<record id="warehouse_transfer_open_2_done" model="base.automation">
+    <field name="action_server_id" ref="warehouse_transfer_action_done" />
+    <field name="trigger">on_write</field>
+    <field name="filter_pre_domain">[('resolve_ok','=',False)]</field>
+    <field name="filter_domain">[('resolve_ok','=',True)]</field>
+</record>
+</data>
+</odoo>
