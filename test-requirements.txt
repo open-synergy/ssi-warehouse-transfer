@@ -1,0 +1,16 @@
+git+https://github.com/open-synergy/ssi-stock@14.0#subdirectory=setup/ssi_stock_location_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-stock@14.0#subdirectory=setup/ssi_stock_route_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-stock@14.0#subdirectory=setup/ssi_stock_warehouse_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-stock@14.0#subdirectory=setup/ssi_stock
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_decorator
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_localdict_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_master_data_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_transaction_cancel_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_transaction_confirm_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_transaction_done_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_transaction_open_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_transaction_terminate_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_res_currency_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_res_partner_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_res_partner_bank_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_m2o_configurator_mixin
