@@ -18,7 +18,6 @@
         "ssi_transaction_terminate_mixin",
         "ssi_transaction_cancel_mixin",
         "ssi_product_line_mixin",
-        "ssi_partner_mixin",
         "base_automation",
     ],
     "data": [
