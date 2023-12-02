@@ -15,3 +15,4 @@ git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_res_cu
 git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_res_partner_m2o_configurator_mixin
 git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_res_partner_bank_m2o_configurator_mixin
 git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_m2o_configurator_mixin
+git+https://github.com/open-synergy/ssi-product-attribute@14.0#subdirectory=setup/ssi_product

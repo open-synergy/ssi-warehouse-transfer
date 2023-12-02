@@ -41,6 +41,12 @@
     <field name="arch" type="xml">
         <xpath expr="//field[@name='user_id']" position="after">
             <field name="type_id" />
+            <field name="allowed_product_ids" widget="many2many_tags" invisible="1" />
+            <field
+                    name="allowed_product_category_ids"
+                    widget="many2many_tags"
+                    invisible="1"
+                />
             <field name="date" />
         </xpath>
         <xpath expr="//group[@name='header_right']" position="inside">
@@ -108,7 +114,10 @@
                         <group name="form_detail" colspan="4" col="2">
                             <group name="form_detail1" colspan="1" col="2">
                                 <field name="sequence" />
-                                <field name="product_id" />
+                                <field
+                                        name="product_id"
+                                        domain="['|',('id','in',parent.allowed_product_ids),('categ_id','child_of',parent.allowed_product_category_ids)]"
+                                    />
                                 <field name="name" />
                             </group>
                             <group name="form_detail2" colspan="1" col="2">

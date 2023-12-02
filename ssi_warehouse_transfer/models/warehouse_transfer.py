@@ -76,7 +76,7 @@ class WarehouseTransfer(models.Model):
     )
     type_id = fields.Many2one(
         comodel_name="warehouse_transfer_type",
-        string="Operation",
+        string="Type",
         required=True,
         ondelete="restrict",
         readonly=True,
@@ -136,6 +136,20 @@ class WarehouseTransfer(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    allowed_product_ids = fields.Many2many(
+        comodel_name="product.product",
+        string="Allowed Products",
+        compute="_compute_allowed_product_ids",
+        store=False,
+        compute_sudo=True,
+    )
+    allowed_product_category_ids = fields.Many2many(
+        comodel_name="product.category",
+        string="Allowed Product Category",
+        compute="_compute_allowed_product_category_ids",
+        store=False,
+        compute_sudo=True,
     )
     allowed_inbound_warehouse_ids = fields.Many2many(
         comodel_name="stock.warehouse",
@@ -307,6 +321,34 @@ class WarehouseTransfer(models.Model):
     #         record.deliver_ok = result
 
     @api.depends("type_id")
+    def _compute_allowed_product_ids(self):
+        for record in self:
+            result = False
+            if record.type_id:
+                result = record._m2o_configurator_get_filter(
+                    object_name="product.product",
+                    method_selection=record.type_id.product_selection_method,
+                    manual_recordset=record.type_id.product_ids,
+                    domain=record.type_id.product_domain,
+                    python_code=record.type_id.product_python_code,
+                )
+            record.allowed_product_ids = result
+
+    @api.depends("type_id")
+    def _compute_allowed_product_category_ids(self):
+        for record in self:
+            result = False
+            if record.type_id:
+                result = record._m2o_configurator_get_filter(
+                    object_name="product.category",
+                    method_selection=record.type_id.product_category_selection_method,
+                    manual_recordset=record.type_id.product_category_ids,
+                    domain=record.type_id.product_category_domain,
+                    python_code=record.type_id.product_category_python_code,
+                )
+            record.allowed_product_category_ids = result
+
+    @api.depends("type_id")
     def _compute_allowed_inbound_warehouse_ids(self):
         for record in self:
             result = False
@@ -419,6 +461,13 @@ class WarehouseTransfer(models.Model):
     )
     def onchange_route_id(self):
         self.route_id = False
+
+    @api.onchange(
+        "type_id",
+    )
+    def onchange_policy_template_id(self):
+        template_id = self._get_template_policy()
+        self.policy_template_id = template_id
 
     def action_create_picking(self):
         for record in self.sudo():
