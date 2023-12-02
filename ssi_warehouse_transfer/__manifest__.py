@@ -19,9 +19,7 @@
         "ssi_transaction_cancel_mixin",
         "ssi_product_line_mixin",
         "base_automation",
-        "ssi_stock_location_m2o_configurator_mixin",
-        "ssi_stock_route_m2o_configurator_mixin",
-        "ssi_stock_warehouse_m2o_configurator_mixin",
+        "ssi_product",
         "ssi_m2o_configurator_mixin",
     ],
     "data": [
