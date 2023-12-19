@@ -194,9 +194,9 @@
 <menuitem
         id="warehouse_transfer_menu"
         name="Warehouse Transfers"
-        parent="stock.menu_stock_root"
+        parent="stock.menu_stock_warehouse_mgmt"
         action="warehouse_transfer_action"
         groups="warehouse_transfer_viewer_group"
-        sequence="2"
+        sequence="230"
     />
 </odoo>
