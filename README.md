@@ -18,7 +18,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[ssi_warehouse_transfer](ssi_warehouse_transfer/) | 14.0.2.0.0 |  | Warehouse Transfer
+[ssi_warehouse_transfer](ssi_warehouse_transfer/) | 14.0.2.1.0 |  | Warehouse Transfer
 
 [//]: # (end addons)
 
