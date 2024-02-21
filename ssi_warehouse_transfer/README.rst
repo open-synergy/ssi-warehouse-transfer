@@ -35,6 +35,7 @@ Contributors
 ------------
 
 * Usamah <usa8bit@gmail.com>
+* Miftahussalam <miftahussalam08@gmail.com>
 
 Maintainer
 ----------

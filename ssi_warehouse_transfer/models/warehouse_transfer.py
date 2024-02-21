@@ -2,7 +2,8 @@
 # Copyright 2023 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 from odoo.addons.ssi_decorator import ssi_decorator
 
@@ -522,3 +523,18 @@ class WarehouseTransfer(models.Model):
         if self._automatically_insert_view_element:
             view_arch = self._reconfigure_statusbar_visible(view_arch)
         return view_arch
+
+    @ssi_decorator.pre_confirm_check()
+    def _check_double_items(self):
+        self.ensure_one()
+        product_ids = self.line_ids.product_id
+        for product_id in product_ids:
+            current_product_ids = self.line_ids.filtered(
+                lambda l: l.product_id.id == product_id.id
+            )
+            if len(current_product_ids) > 1:
+                raise ValidationError(
+                    _(
+                        f"The same product cannot be entered twice: {product_id.display_name}."
+                    )
+                )
