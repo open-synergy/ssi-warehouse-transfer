@@ -503,7 +503,7 @@ class WarehouseTransfer(models.Model):
 
     @api.model
     def _get_policy_field(self):
-        res = super(WarehouseTransfer, self)._get_policy_field()
+        res = super()._get_policy_field()
         policy_field = [
             "confirm_ok",
             "approve_ok",
@@ -530,7 +530,7 @@ class WarehouseTransfer(models.Model):
         product_ids = self.line_ids.product_id
         for product_id in product_ids:
             current_product_ids = self.line_ids.filtered(
-                lambda l: l.product_id.id == product_id.id
+                lambda line: line.product_id.id == product_id.id
             )
             if len(current_product_ids) > 1:
                 raise ValidationError(

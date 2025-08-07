@@ -109,10 +109,10 @@
                         <field name="uom_id" />
                         <field name="qty_to_receive" string="To Receive" />
                         <field name="qty_to_deliver" string="To Deliver" />
-                        <field name="qty_incoming" string="Incoming"/>
-                        <field name="qty_outgoing" string="Outgoing"/>
-                        <field name="qty_received" string="Received"/>   
-                        <field name="qty_delivered" string="Delivered"/>                                                             
+                        <field name="qty_incoming" string="Incoming" />
+                        <field name="qty_outgoing" string="Outgoing" />
+                        <field name="qty_received" string="Received" />
+                        <field name="qty_delivered" string="Delivered" />
                     </tree>
                     <form>
                         <group name="form_detail" colspan="4" col="2">
