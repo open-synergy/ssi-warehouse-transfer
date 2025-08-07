@@ -1,0 +1,1069 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_warehouse_transfer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__name
+msgid "# Document"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__transfer_id
+msgid "# Warehouse Transfer"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:base.automation,name:ssi_warehouse_transfer.warehouse_transfer_open_2_done
+#: model:ir.actions.server,name:ssi_warehouse_transfer.warehouse_transfer_action_done
+msgid "Action Done"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_needaction
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__active
+msgid "Active"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__active_approval_ids
+msgid "Active Approvals"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__active_approver_partner_ids
+msgid "Active Partners"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__active_approver_user_ids
+msgid "Active Users"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_ids
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_state
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_all_group
+msgid "All"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_inbound_location_ids
+msgid "Allowed Inbound Locations"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_inbound_warehouse_ids
+msgid "Allowed Inbound Warehouses"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_outbound_location_ids
+msgid "Allowed Outbound Locations"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_outbound_warehouse_ids
+msgid "Allowed Outbound Warehouses"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_policy_template_ids
+msgid "Allowed Policy Templates"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_product_category_ids
+msgid "Allowed Product Category"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_product_ids
+msgid "Allowed Products"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__allowed_route_ids
+msgid "Allowed Routes"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__allowed_uom_ids
+msgid "Allowed UoMs"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__approval_template_id
+msgid "Approval Configuration"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__approval_template_id
+msgid "Approval Template"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__approval_ids
+msgid "Approvals"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__approve_ok
+msgid ""
+"Approve policy\n"
+"\n"
+"* If active user can see and execute 'Approve' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__approved
+msgid "Approved"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__approve_ok
+msgid "Can Approve"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__cancel_ok
+msgid "Can Cancel"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__confirm_ok
+msgid "Can Confirm"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__done_ok
+msgid "Can Finished"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__manual_number_ok
+msgid "Can Input Manual Document Number"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__reject_ok
+msgid "Can Reject"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__restart_ok
+msgid "Can Restart"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__restart_approval_ok
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__open_ok
+msgid "Can Start"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__terminate_ok
+msgid "Can Terminate"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__cancel_reason_id
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__cancel_ok
+msgid ""
+"Cancel policy\n"
+"\n"
+"* If active user can see and execute 'Cancel' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__code
+msgid "Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__company_id
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_company_group
+msgid "Company"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__company_partner_id
+msgid "Company Partner"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_company_child_group
+msgid "Company and All Child Companies"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__company_id
+msgid ""
+"Company that own the document\n"
+"\n"
+"* Automatically filled with user's company.\n"
+"  Default company can be changed"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__confirm_ok
+msgid ""
+"Confirm policy\n"
+"\n"
+"* If active user can see and execute 'Confirm' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Create Picking"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__create_uid
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__create_uid
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__create_date
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__create_date
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__date
+msgid "Date"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Delivered"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__name
+msgid "Description"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Details"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_move__display_name
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_rule__display_name
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__display_name
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__display_name
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__done_ok
+msgid ""
+"Done policy\n"
+"\n"
+"* If active user can see and execute 'Done' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__activity_type_icon
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_move__id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_rule__id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__activity_exception_icon
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__message_needaction
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__message_unread
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__message_needaction
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__message_has_error
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Inbound"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__inbound_location_id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__outbound_location_id
+msgid "Inbound Location"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_location_domain
+msgid "Inbound Location Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_location_python_code
+msgid "Inbound Location Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_location_selection_method
+msgid "Inbound Location Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_location_ids
+msgid "Inbound Locations"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__inbound_warehouse_id
+msgid "Inbound Warehouse"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_warehouse_domain
+msgid "Inbound Warehouse Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_warehouse_python_code
+msgid "Inbound Warehouse Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_warehouse_selection_method
+msgid "Inbound Warehouse Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__inbound_warehouse_ids
+msgid "Inbound Warehouses"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Incoming"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_type_view_form
+msgid "Inventory"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_is_follower
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_move____last_update
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_rule____last_update
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer____last_update
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line____last_update
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__write_uid
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__write_uid
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__write_date
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__write_date
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__line_ids
+msgid "Line"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Location"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__manual_number_ok
+msgid ""
+"Manual number assignment policy\n"
+"\n"
+"* If active user can edit document number"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__active
+msgid ""
+"Master data status\n"
+"\n"
+"* Inactive data can not be selected when creating new transaction\n"
+"* Transaction with inactive master data can still be viewed\n"
+"* Set master data as inactive if master data no longger needed,\n"
+"but master data already used on transaction"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__code
+msgid ""
+"Master data unique identifier.\n"
+"\n"
+"* Fill with '/' if You do not need unique identifier\n"
+"* Click 'Generate Code' button to automatically assign code.\n"
+"  Sequence template mush be set to perform this action\n"
+"  Only master data with '/' code will be assign automatic code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_has_error
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_ids
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__name
+msgid "Name"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_summary
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_type_id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__next_approval_ids
+msgid "Next Approvals"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__note
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__note
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__note
+msgid "Note"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__message_needaction_counter
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__message_has_error_counter
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__message_unread_counter
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Outbound"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_location_domain
+msgid "Outbound Location Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_location_python_code
+msgid "Outbound Location Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_location_selection_method
+msgid "Outbound Location Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_location_ids
+msgid "Outbound Locations"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__outbound_warehouse_id
+msgid "Outbound Warehouse"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_warehouse_domain
+msgid "Outbound Warehouse Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_warehouse_python_code
+msgid "Outbound Warehouse Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_warehouse_selection_method
+msgid "Outbound Warehouse Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__outbound_warehouse_ids
+msgid "Outbound Warehouses"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Outgoing"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__policy_template_id
+msgid "Policy Template"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Procurement"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__procurement_group_id
+msgid "Procurement Group"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__product_id
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_type_view_form
+msgid "Product"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_category_ids
+msgid "Product Categories"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__product_category_id
+msgid "Product Category"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_category_domain
+msgid "Product Category Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_category_python_code
+msgid "Product Category Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_category_selection_method
+msgid "Product Category Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_domain
+msgid "Product Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_python_code
+msgid "Product Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_selection_method
+msgid "Product Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__product_ids
+msgid "Products"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__qty_delivered
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__qty_delivered
+msgid "Qty Delivered"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__qty_incoming
+msgid "Qty Incoming"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__qty_outgoing
+msgid "Qty Outgoing"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__qty_received
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__qty_received
+msgid "Qty Received"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__qty_to_deliver
+msgid "Qty To Deliver"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__qty_to_receipt
+msgid "Qty To Receipt"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__qty_to_deliver
+msgid "Qty to Deliver"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__qty_to_receive
+msgid "Qty to Receive"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Quantities"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__quantity
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Quantity"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Received"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__reject_ok
+msgid ""
+"Reject policy\n"
+"\n"
+"* If active user can see and execute 'Reject' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__resolve_ok
+msgid "Resolve Ok"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__activity_user_id
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__restart_approval_ok
+msgid ""
+"Restart approval policy\n"
+"\n"
+"* If active user can see and execute 'Restart Approval' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__restart_ok
+msgid ""
+"Restart policy\n"
+"\n"
+"* If active user can see and execute 'Restart' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__reviewer_id
+msgid "Reviewer"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__route_id
+msgid "Route"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__route_domain
+msgid "Route Domain"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__route_python_code
+msgid "Route Python Code"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__route_selection_method
+msgid "Route Selection Method"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__route_ids
+msgid "Routes"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_line__product_category_id
+msgid "Select category for the current product"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__open_ok
+msgid ""
+"Start policy\n"
+"\n"
+"* If active user can see and execute 'Start' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__state
+msgid "State"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__activity_state
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model,name:ssi_warehouse_transfer.model_stock_move
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Stock Move"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__stock_move_ids
+msgid "Stock Moves"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model,name:ssi_warehouse_transfer.model_stock_rule
+msgid "Stock Rule"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__terminate_reason_id
+msgid "Terminate Reason"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__terminate_ok
+msgid ""
+"Terminate policy\n"
+"\n"
+"* If active user can see and execute 'Terminate' button"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "To Deliver"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "To Receive"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__name
+msgid ""
+"Transaction/document number\n"
+"\n"
+"* Unique indentifer of transaction\n"
+"* Leave '/' to automatically generate number\n"
+"* Change '/' into any number/identifier to manually assign number.\n"
+"  Manual number assignment can be done in 'Draft' state\n"
+"  Only user with 'Can Manualy Assign Number' policy can manually assign number.\n"
+"* Transaction with number other than '/' can not be deleted."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__type_id
+msgid "Type"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_unread
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__uom_id
+msgid "UoM"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__uom_quantity
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__uom_quantity
+msgid "UoM Quantity"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_user_group
+msgid "User"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__user_id
+msgid ""
+"User that responsible for document\n"
+"\n"
+"* Create user can be different with responsible user\n"
+"* Automatically filled with user that initiate document creation.\n"
+"  Default responsible can be changed."
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__reviewer_id
+msgid ""
+"User that responsible to review document\n"
+"\n"
+"* Unless it configured to approve reviewer does not equal to approver"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__active_approver_user_ids
+msgid "Users that can approve/reject document"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_validator_group
+msgid "Validator"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_viewer_group
+msgid "Viewer"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Warehouse"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.actions.act_window,name:ssi_warehouse_transfer.warehouse_transfer_action
+#: model:ir.model,name:ssi_warehouse_transfer.model_warehouse_transfer
+#: model:ir.module.category,name:ssi_warehouse_transfer.warehouse_transfer_data_ownership_module_category
+#: model:ir.module.category,name:ssi_warehouse_transfer.warehouse_transfer_workflow_module_category
+#: model:ir.ui.menu,name:ssi_warehouse_transfer.menu_warehouse_transfer_config
+msgid "Warehouse Transfer"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model,name:ssi_warehouse_transfer.model_warehouse_transfer_line
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_stock_move__warehouse_transfer_line_ids
+msgid "Warehouse Transfer Line"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model,name:ssi_warehouse_transfer.model_warehouse_transfer_type
+#: model:res.groups,name:ssi_warehouse_transfer.warehouse_transfer_type_group
+msgid "Warehouse Transfer Type"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.actions.act_window,name:ssi_warehouse_transfer.warehouse_transfer_type_action
+#: model:ir.ui.menu,name:ssi_warehouse_transfer.warehouse_transfer_type_menu
+msgid "Warehouse Transfer Types"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.ui.menu,name:ssi_warehouse_transfer.warehouse_transfer_menu
+msgid "Warehouse Transfers"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__website_message_ids
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer__website_message_ids
+#: model:ir.model.fields,help:ssi_warehouse_transfer.field_warehouse_transfer_type__website_message_ids
+msgid "Website communication history"
+msgstr ""
