@@ -10,7 +10,7 @@ class StockRule(models.Model):
     _inherit = ["stock.rule"]
 
     def _get_custom_move_fields(self):
-        _super = super(StockRule, self)
+        _super = super()
         result = _super._get_custom_move_fields()
         result += [
             "warehouse_transfer_line_ids",
@@ -28,7 +28,7 @@ class StockRule(models.Model):
         company_id,
         values,
     ):
-        _super = super(StockRule, self)
+        _super = super()
         result = _super._get_stock_move_values(
             product_id,
             product_qty,
