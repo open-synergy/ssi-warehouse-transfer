@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-ssi_warehouse_transfer',
+        'odoo14-addon-ssi_warehouse_transfer_documenso_signing',
     ],
     classifiers=[
         'Programming Language :: Python',
