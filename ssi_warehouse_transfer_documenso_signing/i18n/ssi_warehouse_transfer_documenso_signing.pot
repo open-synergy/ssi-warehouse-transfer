@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_warehouse_transfer_documenso_signing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_warehouse_transfer_documenso_signing
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer_documenso_signing.field_warehouse_transfer__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_warehouse_transfer_documenso_signing
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer_documenso_signing.field_warehouse_transfer__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_warehouse_transfer_documenso_signing
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer_documenso_signing.field_warehouse_transfer____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_warehouse_transfer_documenso_signing
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer_documenso_signing.field_warehouse_transfer__signature_request_count
+msgid "Num. of Signature Requests"
+msgstr ""
+
+#. module: ssi_warehouse_transfer_documenso_signing
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer_documenso_signing.field_warehouse_transfer__signature_request_ids
+msgid "Signature Requests"
+msgstr ""
+
+#. module: ssi_warehouse_transfer_documenso_signing
+#: model:ir.model,name:ssi_warehouse_transfer_documenso_signing.model_warehouse_transfer
+msgid "Warehouse Transfer"
+msgstr ""
