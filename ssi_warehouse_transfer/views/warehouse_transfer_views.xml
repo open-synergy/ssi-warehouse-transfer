@@ -39,6 +39,16 @@
     <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_form" />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
+        <xpath expr="//div[@name='button_box']" position="inside">
+            <button
+                type="object"
+                string="Transfers"
+                name="action_open_transfer"
+                class="oe_stat_button"
+                icon="fa-truck"
+                attrs="{'invisible': [('procurement_group_id', '=', False)]}">
+            </button>
+        </xpath>
         <xpath expr="//field[@name='user_id']" position="after">
             <field name="type_id" />
             <field name="allowed_product_ids" widget="many2many_tags" invisible="1" />
@@ -174,7 +184,7 @@
                         style="margin-right:4px"
                     />
                 <group name="procurement_1" colspan="4" col="2">
-                    <field name="procurement_group_id" />
+                    <field name="procurement_group_id" options="{'no_open': True}" />
                 </group>
                 <group name="procurement_2" colspan="4" col="2" invisible="0">
                     <field name="qty_to_receipt" />
