@@ -18,7 +18,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[ssi_warehouse_transfer](ssi_warehouse_transfer/) | 14.0.2.4.0 |  | Warehouse Transfer
+[ssi_warehouse_transfer](ssi_warehouse_transfer/) | 14.0.2.5.0 |  | Warehouse Transfer
 [ssi_warehouse_transfer_documenso_signing](ssi_warehouse_transfer_documenso_signing/) | 14.0.1.0.0 |  | Warehouse Transfer - Documenso Signing Integration
 
 [//]: # (end addons)
