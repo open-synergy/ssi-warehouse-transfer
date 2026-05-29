@@ -200,6 +200,57 @@ class WarehouseTransfer(models.Model):
         states={"draft": [("readonly", False)]},
         copy=True,
     )
+
+    @api.depends(
+        "line_ids",
+        "line_ids.stock_move_ids",
+        "line_ids.stock_move_ids.picking_id.state",
+    )
+    def _compute_stock_document_ids(self):
+        for record in self:
+            num_reception = num_delivery = 0
+            interwarehouse_in = self.env.ref("ssi_stock.picking_category_iwi")
+            interwarehouse_out = self.env.ref("ssi_stock.picking_category_iwo")
+            record.stock_move_ids = record.mapped("line_ids.stock_move_ids")
+            record.stock_picking_ids = record.mapped(
+                "line_ids.stock_move_ids.picking_id"
+            )
+            for picking in record.stock_picking_ids.filtered(
+                lambda r: r.state == "done"
+            ):
+                if picking.picking_type_category_id == interwarehouse_in:
+                    num_reception += 1
+                elif picking.picking_type_category_id == interwarehouse_out:
+                    num_delivery += 1
+            record.num_of_reception = num_reception
+            record.num_of_delivery = num_delivery
+
+    stock_move_ids = fields.Many2many(
+        string="Stock Moves",
+        comodel_name="stock.move",
+        compute="_compute_stock_document_ids",
+        store=False,
+        compute_sudo=True,
+    )
+    stock_picking_ids = fields.Many2many(
+        string="Stock Pickings",
+        comodel_name="stock.picking",
+        compute="_compute_stock_document_ids",
+        store=False,
+        compute_sudo=True,
+    )
+    num_of_reception = fields.Integer(
+        string="Num. of Reception",
+        compute="_compute_stock_document_ids",
+        store=True,
+        compute_sudo=True,
+    )
+    num_of_delivery = fields.Integer(
+        string="Num. of Delivery",
+        compute="_compute_stock_document_ids",
+        store=True,
+        compute_sudo=True,
+    )
     qty_to_receipt = fields.Float(
         string="Qty To Receipt",
         compute="_compute_qty_to_receipt",
@@ -550,14 +601,44 @@ class WarehouseTransfer(models.Model):
                     )
                 )
 
-    def action_open_transfer(self):
+    def _open_reception(self):
         self.ensure_one()
-        waction = self.env.ref("stock.do_view_pickings").read()[0]
+        interwarehouse_in = self.env.ref("ssi_stock.picking_category_iwi")
+        pickings = self.stock_picking_ids.filtered(
+            lambda r: r.picking_type_category_id.id == interwarehouse_in.id
+        )
+        waction = self.env.ref("ssi_stock.interwarehouse_in_action").read()[0]
         waction.update(
             {
                 "view_mode": "tree,form",
-                "domain": [("group_id", "=", self.procurement_group_id.id)],
-                "context": {},
+                "domain": [("id", "in", pickings.ids)],
+                "default_picking_type_category_id": interwarehouse_in,
             }
         )
         return waction
+
+    def _open_delivery(self):
+        self.ensure_one()
+        interwarehouse_out = self.env.ref("ssi_stock.picking_category_iwo")
+        pickings = self.stock_picking_ids.filtered(
+            lambda r: r.picking_type_category_id.id == interwarehouse_out.id
+        )
+        waction = self.env.ref("ssi_stock.interwarehouse_out_action").read()[0]
+        waction.update(
+            {
+                "view_mode": "tree,form",
+                "domain": [("id", "in", pickings.ids)],
+                "default_picking_type_category_id": interwarehouse_out,
+            }
+        )
+        return waction
+
+    def action_open_reception(self):
+        for record in self.sudo():
+            result = record._open_reception()
+        return result
+
+    def action_open_delivery(self):
+        for record in self.sudo():
+            result = record._open_delivery()
+        return result
