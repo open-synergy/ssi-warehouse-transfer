@@ -948,6 +948,11 @@ msgid ""
 msgstr ""
 
 #. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "Transfers"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__type_id
 msgid "Type"
 msgstr ""
@@ -1049,6 +1054,14 @@ msgstr ""
 #: model:ir.actions.act_window,name:ssi_warehouse_transfer.warehouse_transfer_type_action
 #: model:ir.ui.menu,name:ssi_warehouse_transfer.warehouse_transfer_type_menu
 msgid "Warehouse Transfer Types"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: code:addons/ssi_warehouse_transfer/models/warehouse_transfer.py:0
+#, python-format
+msgid ""
+"Warehouse Transfer cannot be confirmed.\n"
+"Please add at least one transfer line before confirming."
 msgstr ""
 
 #. module: ssi_warehouse_transfer
