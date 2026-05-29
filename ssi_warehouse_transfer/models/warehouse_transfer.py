@@ -525,6 +525,17 @@ class WarehouseTransfer(models.Model):
         return view_arch
 
     @ssi_decorator.pre_confirm_check()
+    def _check_line_ids(self):
+        self.ensure_one()
+        if not self.line_ids:
+            raise ValidationError(
+                _(
+                    "Warehouse Transfer cannot be confirmed.\n"
+                    "Please add at least one transfer line before confirming."
+                )
+            )
+
+    @ssi_decorator.pre_confirm_check()
     def _check_double_items(self):
         self.ensure_one()
         product_ids = self.line_ids.product_id
@@ -538,3 +549,15 @@ class WarehouseTransfer(models.Model):
                         f"The same product cannot be entered twice: {product_id.display_name}."
                     )
                 )
+
+    def action_open_transfer(self):
+        self.ensure_one()
+        waction = self.env.ref("stock.do_view_pickings").read()[0]
+        waction.update(
+            {
+                "view_mode": "tree,form",
+                "domain": [("group_id", "=", self.procurement_group_id.id)],
+                "context": {},
+            }
+        )
+        return waction
