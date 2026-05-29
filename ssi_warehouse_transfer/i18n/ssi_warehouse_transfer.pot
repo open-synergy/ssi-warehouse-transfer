@@ -24,6 +24,16 @@ msgid "# Warehouse Transfer"
 msgstr ""
 
 #. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "<span class=\"o_stat_text\">Delivery</span>"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
+msgid "<span class=\"o_stat_text\">Reception</span>"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
 #: model:base.automation,name:ssi_warehouse_transfer.warehouse_transfer_open_2_done
 #: model:ir.actions.server,name:ssi_warehouse_transfer.warehouse_transfer_action_done
 msgid "Action Done"
@@ -579,6 +589,16 @@ msgid "Note"
 msgstr ""
 
 #. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__num_of_delivery
+msgid "Num. of Delivery"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__num_of_reception
+msgid "Num. of Reception"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__message_needaction_counter
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_type__message_needaction_counter
 msgid "Number of Actions"
@@ -902,8 +922,14 @@ msgid "Stock Move"
 msgstr ""
 
 #. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__stock_move_ids
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer_line__stock_move_ids
 msgid "Stock Moves"
+msgstr ""
+
+#. module: ssi_warehouse_transfer
+#: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__stock_picking_ids
+msgid "Stock Pickings"
 msgstr ""
 
 #. module: ssi_warehouse_transfer
@@ -945,11 +971,6 @@ msgid ""
 "  Manual number assignment can be done in 'Draft' state\n"
 "  Only user with 'Can Manualy Assign Number' policy can manually assign number.\n"
 "* Transaction with number other than '/' can not be deleted."
-msgstr ""
-
-#. module: ssi_warehouse_transfer
-#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_form
-msgid "Transfers"
 msgstr ""
 
 #. module: ssi_warehouse_transfer
