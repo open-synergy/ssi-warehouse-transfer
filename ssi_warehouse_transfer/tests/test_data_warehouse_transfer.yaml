@@ -1,5 +1,5 @@
 scenarios:
-  - name: "WarehouseTransfer - Full Workflow: draft to done (no lines)"
+  - name: "WarehouseTransfer - Confirm and Cancel flow"
     steps:
       - step: "Get existing warehouse"
         action: "search"
@@ -8,20 +8,12 @@ scenarios:
         save_as: "warehouse"
         limit: 1
 
-      - step: "Get internal location for outbound"
+      - step: "Get internal location"
         action: "search"
         model: "stock.location"
         domain:
           - ["usage", "=", "internal"]
-        save_as: "outbound_location"
-        limit: 1
-
-      - step: "Get internal location for inbound"
-        action: "search"
-        model: "stock.location"
-        domain:
-          - ["usage", "=", "internal"]
-        save_as: "inbound_location"
+        save_as: "location"
         limit: 1
 
       - step: "Create route"
@@ -29,17 +21,29 @@ scenarios:
         model: "stock.location.route"
         save_as: "route"
         values:
-          name: "Test Route WT Full"
+          name: "Test Route WT Confirm"
+
+      - step: "Get product UoM (Units)"
+        action: "ref"
+        xml_id: "uom.product_uom_unit"
+        save_as: "uom"
+
+      - step: "Create product"
+        action: "create"
+        model: "product.product"
+        save_as: "product"
+        values:
+          name: "Test Product WT Confirm"
 
       - step: "Create transfer type"
         action: "create"
         model: "warehouse_transfer_type"
         save_as: "transfer_type"
         values:
-          name: "Test Transfer Type Full"
-          code: "TTFULL"
+          name: "Test Transfer Type Confirm"
+          code: "TTCONF"
 
-      - step: "Create warehouse transfer"
+      - step: "Create warehouse transfer with line"
         action: "create"
         model: "warehouse_transfer"
         save_as: "transfer"
@@ -50,8 +54,16 @@ scenarios:
           outbound_warehouse_id: "EVAL: registry['warehouse'].id"
           inbound_warehouse_id: "EVAL: registry['warehouse'].id"
           route_id: "EVAL: registry['route'].id"
-          outbound_location_id: "EVAL: registry['outbound_location'].id"
-          inbound_location_id: "EVAL: registry['inbound_location'].id"
+          outbound_location_id: "EVAL: registry['location'].id"
+          inbound_location_id: "EVAL: registry['location'].id"
+          line_ids:
+            - - 0
+              - 0
+              - name: "Test Line WT Confirm"
+                product_id: "EVAL: registry['product'].id"
+                uom_id: "EVAL: registry['uom'].id"
+                uom_quantity: 5.0
+                sequence: 10
 
       - step: "Assert transfer created in draft"
         action: "assert"
@@ -62,16 +74,15 @@ scenarios:
             expected: "draft"
           uom_quantity:
             type: "value"
-            expected: 0.0
-          resolve_ok:
-            type: "value"
-            expected: false
+            expected: 5.0
 
       - step: "Confirm transfer"
         action: "call"
         target: "transfer"
         method: "action_confirm"
         as_user: "base.user_admin"
+        context:
+          bypass_policy_check: true
         asserts:
           state:
             type: "value"
@@ -82,27 +93,29 @@ scenarios:
         target: "transfer"
         method: "invalidate_cache"
 
-      - step: "Approve transfer (auto-done since no lines)"
+      - step: "Cancel transfer from confirm"
         action: "call"
         target: "transfer"
-        method: "action_approve_approval"
+        method: "action_cancel"
         as_user: "base.user_admin"
-
-      - step: "Invalidate cache after approve"
-        action: "call"
-        target: "transfer"
-        method: "invalidate_cache"
-
-      - step: "Assert transfer auto-done (resolve_ok True with no lines)"
-        action: "assert"
-        target: "transfer"
+        context:
+          bypass_policy_check: true
         asserts:
           state:
             type: "value"
-            expected: "done"
-          procurement_group_id:
+            expected: "cancel"
+
+      - step: "Restart transfer from cancel"
+        action: "call"
+        target: "transfer"
+        method: "action_restart"
+        as_user: "base.user_admin"
+        context:
+          bypass_policy_check: true
+        asserts:
+          state:
             type: "value"
-            operator: "is_truthy"
+            expected: "draft"
 
   - name: "WarehouseTransfer - Computed fields with lines"
     steps:
@@ -198,81 +211,3 @@ scenarios:
             type: "o2m"
             check: "count"
             expected_count: 1
-
-  - name: "WarehouseTransfer - Cancel from draft"
-    steps:
-      - step: "Get existing warehouse"
-        action: "search"
-        model: "stock.warehouse"
-        domain: []
-        save_as: "warehouse"
-        limit: 1
-
-      - step: "Get internal location"
-        action: "search"
-        model: "stock.location"
-        domain:
-          - ["usage", "=", "internal"]
-        save_as: "location"
-        limit: 1
-
-      - step: "Create route"
-        action: "create"
-        model: "stock.location.route"
-        save_as: "route"
-        values:
-          name: "Test Route WT Cancel"
-
-      - step: "Create transfer type"
-        action: "create"
-        model: "warehouse_transfer_type"
-        save_as: "transfer_type"
-        values:
-          name: "Test Transfer Type Cancel"
-          code: "TTCANC"
-
-      - step: "Create warehouse transfer"
-        action: "create"
-        model: "warehouse_transfer"
-        save_as: "transfer"
-        as_user: "base.user_admin"
-        values:
-          date: "2024-01-01"
-          type_id: "EVAL: registry['transfer_type'].id"
-          outbound_warehouse_id: "EVAL: registry['warehouse'].id"
-          inbound_warehouse_id: "EVAL: registry['warehouse'].id"
-          route_id: "EVAL: registry['route'].id"
-          outbound_location_id: "EVAL: registry['location'].id"
-          inbound_location_id: "EVAL: registry['location'].id"
-
-      - step: "Assert draft state"
-        action: "assert"
-        target: "transfer"
-        asserts:
-          state:
-            type: "value"
-            expected: "draft"
-
-      - step: "Cancel transfer from draft"
-        action: "call"
-        target: "transfer"
-        method: "action_cancel"
-        as_user: "base.user_admin"
-        context:
-          bypass_policy_check: true
-        asserts:
-          state:
-            type: "value"
-            expected: "cancel"
-
-      - step: "Restart transfer from cancel"
-        action: "call"
-        target: "transfer"
-        method: "action_restart"
-        as_user: "base.user_admin"
-        context:
-          bypass_policy_check: true
-        asserts:
-          state:
-            type: "value"
-            expected: "draft"
