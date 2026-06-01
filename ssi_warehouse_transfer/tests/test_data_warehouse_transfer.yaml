@@ -1,0 +1,278 @@
+scenarios:
+  - name: "WarehouseTransfer - Full Workflow: draft to done (no lines)"
+    steps:
+      - step: "Get existing warehouse"
+        action: "search"
+        model: "stock.warehouse"
+        domain: []
+        save_as: "warehouse"
+        limit: 1
+
+      - step: "Get internal location for outbound"
+        action: "search"
+        model: "stock.location"
+        domain:
+          - ["usage", "=", "internal"]
+        save_as: "outbound_location"
+        limit: 1
+
+      - step: "Get internal location for inbound"
+        action: "search"
+        model: "stock.location"
+        domain:
+          - ["usage", "=", "internal"]
+        save_as: "inbound_location"
+        limit: 1
+
+      - step: "Create route"
+        action: "create"
+        model: "stock.location.route"
+        save_as: "route"
+        values:
+          name: "Test Route WT Full"
+
+      - step: "Create transfer type"
+        action: "create"
+        model: "warehouse_transfer_type"
+        save_as: "transfer_type"
+        values:
+          name: "Test Transfer Type Full"
+          code: "TTFULL"
+
+      - step: "Create warehouse transfer"
+        action: "create"
+        model: "warehouse_transfer"
+        save_as: "transfer"
+        as_user: "base.user_admin"
+        values:
+          date: "2024-01-01"
+          type_id: "EVAL: registry['transfer_type'].id"
+          outbound_warehouse_id: "EVAL: registry['warehouse'].id"
+          inbound_warehouse_id: "EVAL: registry['warehouse'].id"
+          route_id: "EVAL: registry['route'].id"
+          outbound_location_id: "EVAL: registry['outbound_location'].id"
+          inbound_location_id: "EVAL: registry['inbound_location'].id"
+
+      - step: "Assert transfer created in draft"
+        action: "assert"
+        target: "transfer"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+          uom_quantity:
+            type: "value"
+            expected: 0.0
+          resolve_ok:
+            type: "value"
+            expected: false
+
+      - step: "Confirm transfer"
+        action: "call"
+        target: "transfer"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+        asserts:
+          state:
+            type: "value"
+            expected: "confirm"
+
+      - step: "Invalidate cache after confirm"
+        action: "call"
+        target: "transfer"
+        method: "invalidate_cache"
+
+      - step: "Approve transfer (auto-done since no lines)"
+        action: "call"
+        target: "transfer"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after approve"
+        action: "call"
+        target: "transfer"
+        method: "invalidate_cache"
+
+      - step: "Assert transfer auto-done (resolve_ok True with no lines)"
+        action: "assert"
+        target: "transfer"
+        asserts:
+          state:
+            type: "value"
+            expected: "done"
+          procurement_group_id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "WarehouseTransfer - Computed fields with lines"
+    steps:
+      - step: "Get existing warehouse"
+        action: "search"
+        model: "stock.warehouse"
+        domain: []
+        save_as: "warehouse"
+        limit: 1
+
+      - step: "Get internal location"
+        action: "search"
+        model: "stock.location"
+        domain:
+          - ["usage", "=", "internal"]
+        save_as: "location"
+        limit: 1
+
+      - step: "Create route"
+        action: "create"
+        model: "stock.location.route"
+        save_as: "route"
+        values:
+          name: "Test Route WT Lines"
+
+      - step: "Get product UoM (Units)"
+        action: "ref"
+        xml_id: "uom.product_uom_unit"
+        save_as: "uom"
+
+      - step: "Create product"
+        action: "create"
+        model: "product.product"
+        save_as: "product"
+        values:
+          name: "Test Product WT Lines"
+
+      - step: "Create transfer type"
+        action: "create"
+        model: "warehouse_transfer_type"
+        save_as: "transfer_type"
+        values:
+          name: "Test Transfer Type Lines"
+          code: "TTLINES"
+
+      - step: "Create warehouse transfer with lines"
+        action: "create"
+        model: "warehouse_transfer"
+        save_as: "transfer"
+        as_user: "base.user_admin"
+        values:
+          date: "2024-01-01"
+          type_id: "EVAL: registry['transfer_type'].id"
+          outbound_warehouse_id: "EVAL: registry['warehouse'].id"
+          inbound_warehouse_id: "EVAL: registry['warehouse'].id"
+          route_id: "EVAL: registry['route'].id"
+          outbound_location_id: "EVAL: registry['location'].id"
+          inbound_location_id: "EVAL: registry['location'].id"
+          line_ids:
+            - - 0
+              - 0
+              - name: "Test Line WT"
+                product_id: "EVAL: registry['product'].id"
+                uom_id: "EVAL: registry['uom'].id"
+                uom_quantity: 10.0
+                sequence: 10
+
+      - step: "Assert computed fields on transfer"
+        action: "assert"
+        target: "transfer"
+        asserts:
+          uom_quantity:
+            type: "value"
+            expected: 10.0
+          qty_to_deliver:
+            type: "value"
+            expected: 10.0
+          qty_to_receipt:
+            type: "value"
+            expected: 0.0
+          qty_received:
+            type: "value"
+            expected: 0.0
+          qty_delivered:
+            type: "value"
+            expected: 0.0
+
+      - step: "Assert line count"
+        action: "assert"
+        target: "transfer"
+        asserts:
+          line_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 1
+
+  - name: "WarehouseTransfer - Cancel from draft"
+    steps:
+      - step: "Get existing warehouse"
+        action: "search"
+        model: "stock.warehouse"
+        domain: []
+        save_as: "warehouse"
+        limit: 1
+
+      - step: "Get internal location"
+        action: "search"
+        model: "stock.location"
+        domain:
+          - ["usage", "=", "internal"]
+        save_as: "location"
+        limit: 1
+
+      - step: "Create route"
+        action: "create"
+        model: "stock.location.route"
+        save_as: "route"
+        values:
+          name: "Test Route WT Cancel"
+
+      - step: "Create transfer type"
+        action: "create"
+        model: "warehouse_transfer_type"
+        save_as: "transfer_type"
+        values:
+          name: "Test Transfer Type Cancel"
+          code: "TTCANC"
+
+      - step: "Create warehouse transfer"
+        action: "create"
+        model: "warehouse_transfer"
+        save_as: "transfer"
+        as_user: "base.user_admin"
+        values:
+          date: "2024-01-01"
+          type_id: "EVAL: registry['transfer_type'].id"
+          outbound_warehouse_id: "EVAL: registry['warehouse'].id"
+          inbound_warehouse_id: "EVAL: registry['warehouse'].id"
+          route_id: "EVAL: registry['route'].id"
+          outbound_location_id: "EVAL: registry['location'].id"
+          inbound_location_id: "EVAL: registry['location'].id"
+
+      - step: "Assert draft state"
+        action: "assert"
+        target: "transfer"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+
+      - step: "Cancel transfer from draft"
+        action: "call"
+        target: "transfer"
+        method: "action_cancel"
+        as_user: "base.user_admin"
+        context:
+          bypass_policy_check: true
+        asserts:
+          state:
+            type: "value"
+            expected: "cancel"
+
+      - step: "Restart transfer from cancel"
+        action: "call"
+        target: "transfer"
+        method: "action_restart"
+        as_user: "base.user_admin"
+        context:
+          bypass_policy_check: true
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"

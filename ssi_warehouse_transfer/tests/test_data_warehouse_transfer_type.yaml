@@ -1,0 +1,66 @@
+scenarios:
+  - name: "WarehouseTransferType - Create"
+    steps:
+      - step: "Create warehouse transfer type"
+        action: "create"
+        model: "warehouse_transfer_type"
+        save_as: "transfer_type"
+        values:
+          name: "Test Transfer Type Create"
+          code: "TTTCR"
+      - step: "Assert type created"
+        action: "assert"
+        target: "transfer_type"
+        asserts:
+          id:
+            type: "value"
+            operator: "is_truthy"
+          name:
+            type: "value"
+            expected: "Test Transfer Type Create"
+          active:
+            type: "value"
+            expected: true
+
+  - name: "WarehouseTransferType - Edit"
+    steps:
+      - step: "Create transfer type"
+        action: "create"
+        model: "warehouse_transfer_type"
+        save_as: "transfer_type"
+        values:
+          name: "Original Type"
+          code: "TTTED"
+      - step: "Edit name"
+        action: "write"
+        target: "transfer_type"
+        values:
+          name: "Updated Type"
+      - step: "Assert name updated"
+        action: "assert"
+        target: "transfer_type"
+        asserts:
+          name:
+            type: "value"
+            expected: "Updated Type"
+
+  - name: "WarehouseTransferType - Delete"
+    steps:
+      - step: "Create transfer type to delete"
+        action: "create"
+        model: "warehouse_transfer_type"
+        save_as: "transfer_type"
+        values:
+          name: "Delete Me Type"
+          code: "TTDEL"
+      - step: "Delete transfer type"
+        action: "call"
+        target: "transfer_type"
+        method: "unlink"
+      - step: "Verify deleted"
+        action: "search"
+        model: "warehouse_transfer_type"
+        domain:
+          - ["code", "=", "TTDEL"]
+        save_as: "result"
+        expect_count: 0
