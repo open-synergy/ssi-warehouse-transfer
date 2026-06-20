@@ -295,6 +295,7 @@ msgstr ""
 
 #. module: ssi_warehouse_transfer
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__date
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_search
 msgid "Date"
 msgstr ""
 
@@ -422,6 +423,7 @@ msgstr ""
 
 #. module: ssi_warehouse_transfer
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__inbound_warehouse_id
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_search
 msgid "Inbound Warehouse"
 msgstr ""
 
@@ -655,6 +657,7 @@ msgstr ""
 
 #. module: ssi_warehouse_transfer
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__outbound_warehouse_id
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_search
 msgid "Outbound Warehouse"
 msgstr ""
 
@@ -975,6 +978,7 @@ msgstr ""
 
 #. module: ssi_warehouse_transfer
 #: model:ir.model.fields,field_description:ssi_warehouse_transfer.field_warehouse_transfer__type_id
+#: model_terms:ir.ui.view,arch_db:ssi_warehouse_transfer.warehouse_transfer_view_search
 msgid "Type"
 msgstr ""
 
