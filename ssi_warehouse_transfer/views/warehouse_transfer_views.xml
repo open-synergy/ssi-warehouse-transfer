@@ -29,7 +29,32 @@
             ref="ssi_transaction_mixin.mixin_transaction_view_search"
         />
     <field name="arch" type="xml">
-        <data />
+        <data>
+            <xpath expr="//field[@name='id']" position="after">
+                <field name="type_id" />
+                <field name="outbound_warehouse_id" />
+                <field name="inbound_warehouse_id" />
+                <field name="date" />
+            </xpath>
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter name="grp_date" string="Date" context="{'group_by':'date'}" />
+                <filter
+                        name="grp_type_id"
+                        string="Type"
+                        context="{'group_by':'type_id'}"
+                    />
+                <filter
+                        name="grp_outbound_warehouse_id"
+                        string="Outbound Warehouse"
+                        context="{'group_by':'outbound_warehouse_id'}"
+                    />
+                <filter
+                        name="grp_inbound_warehouse_id"
+                        string="Inbound Warehouse"
+                        context="{'group_by':'inbound_warehouse_id'}"
+                    />
+            </xpath>
+        </data>
     </field>
 </record>
 
